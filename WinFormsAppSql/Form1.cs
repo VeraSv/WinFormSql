@@ -19,8 +19,8 @@ namespace WinFormsAppSql {
             comboBox1.Items.Add("vw");
             comboBox1.DropDownStyle = ComboBoxStyle.DropDownList;
         }
-        static string name;
-        static string age;
+        string name;
+       string age;
         Car car;
         const string errorEmpty = "List is empty\n";
         private void maskedTextBox1_MaskInputRejected(object sender, MaskInputRejectedEventArgs e)
@@ -91,7 +91,7 @@ namespace WinFormsAppSql {
                             MessageBox.Show(users);
 
                         }
-                        else MessageBox.Show("List is empty!");
+                        else MessageBox.Show(errorEmpty);
                     }
                 }
                 catch (Exception ex)
@@ -123,7 +123,7 @@ namespace WinFormsAppSql {
                     if (!String.IsNullOrEmpty(users)) MessageBox.Show(users);
                     else MessageBox.Show("User is not found");
                 }
-                else MessageBox.Show("List is empty!");
+                else MessageBox.Show(errorEmpty);
             }
         }
 
@@ -144,7 +144,7 @@ namespace WinFormsAppSql {
                     db.SaveChanges();
                     MessageBox.Show("Deleted successfully!");
                 }
-                else MessageBox.Show("List is empty!");
+                else MessageBox.Show(errorEmpty);
             }
         }
     

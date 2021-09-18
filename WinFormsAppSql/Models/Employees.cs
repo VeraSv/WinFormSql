@@ -7,6 +7,7 @@ namespace WinFormsApp.Models
 {
     public class Employee
     {
+       
         public int Id { get; set; }
         public string Name { get; set; }
         public int Age { get; set; }
@@ -17,13 +18,13 @@ namespace WinFormsApp.Models
             Name = name;
             Age = age;
             Car = car;
-            Id = name.GetHashCode();
+            Id = name.GetHashCode()+age.GetHashCode()+car.GetHashCode();
         }
 
         public Employee()
         {
 
         }
-       
+      
     }
 }

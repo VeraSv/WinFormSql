@@ -49,6 +49,7 @@ namespace FormTest
             Assert.IsType<String>(users);
             bool isUser = Regex.IsMatch(users, "Tom", RegexOptions.IgnoreCase);
             Assert.True(isUser);
+             FileHelper.Delete("Tom");
         }
         [Fact]
         public void UserDelete()
@@ -58,6 +59,6 @@ namespace FormTest
             //Assert
             Assert.Equal("Deleted successfully!", result);
         }
-        FileHelper.Delete("Tom");
+       
     }
     }
